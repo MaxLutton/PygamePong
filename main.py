@@ -204,13 +204,13 @@ def main():
     game_over_font = pygame.font.SysFont("", 54)
 
     is_server = input("Server: Y/N") == "Y"
+    ip = input("Enter ip for game:")
 
-    # TODO: Get real ip, port
     # TODO: clean up class structures
     if is_server:
-        peer = Server("127.0.0.1", 65432)
+        peer = Server(ip, 65432)
     else:
-        peer = Client("127.0.0.1", 65432)
+        peer = Client(ip, 65432)
 
     # initialize sprites
     ball = Ball(WINDOW_WIDTH//2, WINDOW_HEIGHT//2, stats, speed=[-5, 0])
