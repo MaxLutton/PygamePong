@@ -51,7 +51,7 @@ class Ball(pygame.sprite.Sprite):
     def __init__(self, x, y, game_stats: GameStats, speed=[0, 0]):
         super().__init__()
         self.image: pygame.surface.Surface = pygame.image.load(
-            "intro_ball.gif")
+            "intro_ball.gif").convert_alpha()
         self.init_x = x
         self.init_y = y
         self.init_speed = speed
@@ -89,7 +89,7 @@ class Paddle(pygame.sprite.Sprite):
         self.height = height
         self.init_x = x
         self.init_y = y
-        self.image = pygame.Surface([width, height])
+        self.image = pygame.Surface([width, height]).convert()
         self.image.fill(color)
         self.rect = self.image.get_rect()
         self.rect.x = x
